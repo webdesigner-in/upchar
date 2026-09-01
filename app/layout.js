@@ -1,5 +1,5 @@
-import Footer from "@/components/common/Footer/footer";
-import Header from "@/components/common/Header/header";
+import {Header, Footer} from "@/components/common"
+import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 
 export const metadata = {
@@ -10,11 +10,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`h-full antialiased`}>
+      <ClerkProvider>
       <body className="min-h-full flex flex-col">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer/>
-      </body>
+        </body>
+      </ClerkProvider>
     </html>
   );
 }

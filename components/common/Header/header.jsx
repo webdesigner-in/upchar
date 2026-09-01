@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Show, SignInButton, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 export default function Header() {
@@ -17,9 +18,16 @@ export default function Header() {
           </div>
         </Link>
 
-        <Link href="/signin">
-          <Button variant="default"> Sign In</Button>
-        </Link>
+        <Show when="signed-out">
+          <SignInButton>
+            <Button>Sign In</Button>
+          </SignInButton>
+        </Show>
+        <Show when="signed-in">
+          <div>
+            <UserButton />
+          </div>
+        </Show>
       </nav>
     </header>
   );
