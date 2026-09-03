@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 export default function Header() {
   return (
-    <header className=" sticky top-1 bg-gray-400/10  backdrop-blur-2xl py-3 md:py-5 mb-16 z-20">
+    <header className=" sticky top-0 bg-gray-300/10  backdrop-blur-2xl py-3 md:py-5 mb-16 z-20">
       <nav className=" flex justify-between items-center px-5 md:px-8">
         <Link href="/">
           <div className=" w-24 md:w-36">
